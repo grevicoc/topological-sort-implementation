@@ -1,4 +1,4 @@
-import topoSort as ts
+import header as ts
 
 def main():
     file = open('courses.txt','r')
@@ -11,9 +11,18 @@ def main():
     
     #1 line dibagi2 melalui delimiter dan disimpan menjadi array
     graphDict = ts.makeGraph(reader)
-        
-    print(graphDict)
-    input()
+
+    array = []
+    # ts.deleteEdges("C3",graphDict)
+    # print(array)
+    # print(graphDict)
+    nullArray = []
+    ts.topoSort(nullArray,graphDict,0)
+    print(nullArray)
+
+    
+    # print(graphDict)
+    # input()
 
 if __name__ == "__main__":
     main()
