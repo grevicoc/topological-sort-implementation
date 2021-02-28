@@ -1,28 +1,22 @@
 import header as ts
 
 def main():
+
+    #Membaca file dan menyimpannya dalam graphDict dalam bentuk dictionary graph
     file = open('courses.txt','r')
-    
-    #membuat graph
     graphDict = {}
-    
-    #semua line disimpan mentah
     reader = file.readlines()
-    
-    #1 line dibagi2 melalui delimiter dan disimpan menjadi array
     graphDict = ts.makeGraph(reader)
 
-    array = []
-    # ts.deleteEdges("C3",graphDict)
-    # print(array)
-    # print(graphDict)
-    nullArray = []
-    ts.topoSort(nullArray,graphDict,0)
-    print(nullArray)
-
+    #Pensortiran graphDict dan disimpan oleh finalArray
+    finalArray = []
+    ts.topoSort(finalArray,graphDict,0)
+    print(finalArray)
     
-    # print(graphDict)
-    # input()
+    #Menuliskan susunan yang telah fix (finalArray) ke stdout
+    for i in range (len(finalArray)):
+        print("Semester %d: "%(i+1),end="")
+        print(*finalArray[i],sep=", ")
 
 if __name__ == "__main__":
     main()

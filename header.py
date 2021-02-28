@@ -1,6 +1,4 @@
-def topoSort():
-    return
-
+#Fungsi untuk membuat graph dari raw file reader
 def makeGraph(raw):
     graphDict = {}
     for value in raw:
@@ -18,18 +16,14 @@ def deleteEdges(verticeDeleted,rawGraph):
     for unit in rawGraph:
         if (verticeDeleted in rawGraph.get(unit)):
             indexToBeDeleted = rawGraph.get(unit).index(verticeDeleted)
-            del rawGraph[unit][indexToBeDeleted]
-            # if (len(rawGraph.get(unit))==0):
-            #     counter+=1
-            #     verticeWillDeleted.append(unit)
-    
-    for i in range (counter):
-        del rawGraph[verticeWillDeleted[0]]
+            del rawGraph[unit][indexToBeDeleted]      
         
-
+#Fungsi yang mencari vertice dengan edge kosong dan vertice tersebut akan dihapus. Begitu juga edge-edge yang terhubung dengan vertice yang dihapus
 def findNull(rawGraph):
+    
     returnArray = []
     counter=0
+
     for unit in rawGraph:
         if (len(rawGraph.get(unit))==0):
             returnArray = returnArray + [unit]
@@ -43,11 +37,12 @@ def findNull(rawGraph):
     for i in range(counter):
         deleteEdges(returnArray[i],rawGraph)
 
+    #return nilai vertice yang kosong
     return returnArray
 
-    #BEDAIN DELETE EDGE SAMA DELETE VERTICE
+    
 
-#Membuat topo sort dari rawGraph dan hasilnya akan disimpan dalam array sorted sebanyak 8 elemen (sesuai semester). Limit adalah penanda apakah topoSort dicukupkan atau tidak (8 semester maks)
+#Membuat topo sort dari rawGraph dan hasilnya akan disimpan dalam array sorted. Limit adalah penanda apakah topoSort dicukupkan atau tidak (8 semester maks).
 def topoSort(sorted,rawGraph,limit):
     if (limit==7):
         sorted.append(findNull(rawGraph))
