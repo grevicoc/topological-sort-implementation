@@ -50,7 +50,3 @@ def topoSort(sorted,rawGraph,limit):
         if (len(rawGraph)!=0):
             sorted.append(findNull(rawGraph))
             topoSort(sorted,rawGraph,limit+1)
-
-    
-
-
