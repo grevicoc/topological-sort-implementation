@@ -9,7 +9,7 @@ OS: Windows 10
 ## How to Use
 1.  Download the latest release
 2.  Extract anywhere
-3.  Open command line and open the folder that you have been extracted
+3.  Open the folder that you have been extracted
 4.  To assign what courses and prerequisites, go to ASSIGN_HERE.txt on test folder. Constraints of writing is the first one in line must be course, the next one must be prerequisites, don't use space, separate with commas, and end each course and prerequisites with dot
 5.  To run the program open src folder and double click main13519007.py
 
